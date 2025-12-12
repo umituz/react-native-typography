@@ -30,3 +30,24 @@ export {
   getTextColor,
 } from './presentation/utils/textColorUtils';
 
+export {
+  getTextStyle,
+  isTextStyleVariant,
+  getAllTextStyleVariants,
+  clearTypographyCache,
+} from './presentation/utils/textStyleUtils';
+
+export {
+  clearColorCache,
+} from './presentation/utils/textColorUtils';
+
+export {
+  isValidHexColor,
+  isValidRgbColor,
+  isValidHslColor,
+  isValidNamedColor,
+  isValidColor,
+  getColorFormat,
+  normalizeColor,
+} from './presentation/utils/colorValidationUtils';
+

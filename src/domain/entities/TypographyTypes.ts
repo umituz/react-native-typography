@@ -3,6 +3,11 @@
  * 
  * This file defines all typography-related types for React Native applications.
  * These types are used by components like AtomicText to ensure type-safe typography usage.
+ * 
+ * @fileoverview Provides type definitions for Material Design 3 typography system
+ * @author Ümit UZ <umit@umituz.com>
+ * @since 1.0.0
+ * @version 1.2.0
  */
 
 /**

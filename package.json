@@ -1,12 +1,18 @@
 {
   "name": "@umituz/react-native-design-system-typography",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Typography types and utilities for React Native - Material Design 3 text styles and color variants",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "lint": "tsc --noEmit",
+
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run test",
     "version:minor": "npm version minor -m 'chore: release v%s'",
     "version:major": "npm version major -m 'chore: release v%s'"
   },
@@ -25,16 +31,27 @@
     "url": "https://github.com/umituz/react-native-design-system-typography"
   },
   "peerDependencies": {
+    "@umituz/react-native-design-system-theme": "latest",
     "react": ">=18.2.0",
-    "react-native": ">=0.74.0",
-    "@umituz/react-native-design-system-theme": "latest"
+    "react-native": ">=0.74.0"
+  },
+  "peerDependenciesMeta": {
+    "@umituz/react-native-design-system-theme": {
+      "optional": false
+    }
   },
   "devDependencies": {
-    "@types/react": "^18.2.45",
-    "@types/react-native": "^0.73.0",
-    "react": "^18.2.0",
-    "react-native": "^0.74.0",
-    "typescript": "^5.3.3"
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^18.3.12",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^8.57.1",
+    "jest": "^30.2.0",
+    "react": "^18.3.1",
+    "react-native": "^0.76.5",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.7.2"
   },
   "publishConfig": {
     "access": "public"
@@ -42,6 +59,7 @@
   "files": [
     "src",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "package.json"
   ]
 }
