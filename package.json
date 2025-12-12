@@ -1,11 +1,10 @@
 {
   "name": "@umituz/react-native-design-system-typography",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Typography types and utilities for React Native - Material Design 3 text styles and color variants",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-
     "typecheck": "tsc --noEmit --skipLibCheck",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
