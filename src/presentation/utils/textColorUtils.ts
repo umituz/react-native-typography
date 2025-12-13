@@ -24,7 +24,7 @@
  */
 
 import type { ColorVariant } from '../../domain/entities/TypographyTypes';
-import type { DesignTokens } from '../../types/theme';
+import type { DesignTokens } from '@umituz/react-native-design-system-theme';
 
 // Cache for color variant validation to improve performance
 const COLOR_VARIANT_SET = new Set<string>([
@@ -123,7 +123,8 @@ class MaterialColorMapper implements ColorMapper {
         return tokens.colors.textSecondary;
 
       default:
-        if (process.env.NODE_ENV !== 'production') {
+        if (__DEV__) {
+          // eslint-disable-next-line no-console
           console.warn(`Unknown color variant: ${color}`);
         }
         return tokens.colors.textPrimary;
@@ -178,7 +179,7 @@ export function getTextColor(
 
   // Create cache key - use hash instead of JSON.stringify to prevent memory leaks
   const cacheKey = `${color}_${Object.keys(tokens.colors).length}_${tokens.colors.textPrimary}`;
-  
+
   // Check cache first
   if (colorCache.has(cacheKey)) {
     return colorCache.get(cacheKey)!;
@@ -187,7 +188,7 @@ export function getTextColor(
   // Resolve color and cache it
   const resolvedColor = colorMapper.getColor(color as ColorVariant, tokens);
   colorCache.set(cacheKey, resolvedColor);
-  
+
   return resolvedColor;
 }
 

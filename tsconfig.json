@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "lib": ["es2017", "dom"],
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
     "allowJs": false,
     "skipLibCheck": true,
+    "types": ["react", "react-native"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -11,10 +12,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
+    "noEmit": true,
     "jsx": "react-jsx",
-    "declaration": true,
-    "outDir": "./lib",
+    "declaration": false,
     "rootDir": "./src",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules/**", "lib", "dist", "build"]
+  "exclude": ["node_modules", "lib", "dist", "build", "**/*.test.ts", "**/*.test.tsx", "src/__tests__"]
 }
